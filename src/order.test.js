@@ -24,19 +24,13 @@ describe('Order', () => {
 
     test('Adds item to the items property when item is on the menu', () => {
       order.add("Cafe Latte", 1);
-      expect(order.getItems()).toEqual([["Cafe Latte", 1, 4.75, 4.75, 0.41040000000000004]])
-    })
-
-  })
-
-  describe('orderTotal', () => {
-
-    test('Calculates the total amount owed on an order with tax', () => {
-      order.add("Cafe Latte", 3);
-      order.add("Muffin Of The Day", 2)
-      expect(order.orderTotal()).toEqual(29.313919999999996)
+      expect(order.getItems()).toEqual([["Cafe Latte", 1, 4.75]])
     });
 
   });
+
+  // 
+
+  // });
 
 });

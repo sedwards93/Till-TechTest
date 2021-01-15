@@ -1,4 +1,4 @@
-
+'use strict';
 
 const coffeeShopJson = {
     "shopName": "The Coffee Connection",
@@ -29,7 +29,6 @@ class Order {
   constructor(name) {
     this._name = name;
     this._items = [];
-    this._TAX = 0.0864;
   }
 
   getCustomerName() {
@@ -45,27 +44,9 @@ class Order {
       throw Error('Item not on the menu!')
     } else {
       let price = coffeeShopJson.prices[0][item];
-      this._items.push([item, quantity, price, this._totalPrice(price, quantity), this._tax(price)])
+      this._items.push([item, quantity, price])
     } 
   }
-
-  orderTotal() {
-    var sum = 0;
-    for (var i = 0; i < (this._items).length; i++) {
-      sum += this._items[i][3] + this._items[i][4];
-    }
-    return sum;;
-  }
-
-  _totalPrice(price, quantity) {
-    return price * quantity;
-  }
-
-  _tax(price) {
-    return price * this._TAX;
-   
-  }
-
 }
 
 
