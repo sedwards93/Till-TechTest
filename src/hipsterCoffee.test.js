@@ -1,12 +1,8 @@
 const Order = require('./hipsterCoffee.js')
 
-describe('Order Class', () => {
-
-  beforeEach(() => {
-    order = new Order('Susan')
-  });
-
+describe('Order', () => {
   test('Has customer name property', () => {
-    expect(order.getCustomerName().toEqual('Susan'))
+    let order = new Order('Susan');
+    expect(order.getCustomerName()).toEqual('Susan')
   });
 });

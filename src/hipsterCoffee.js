@@ -26,7 +26,12 @@ const coffeeShopJson = [
 ]
 
 class Order {
-
+  constructor(name) {
+    this._name = name;
+  }
+  getCustomerName() {
+    return this._name;
+  }
 }
 
 module.exports = Order;
