@@ -1,5 +1,4 @@
-const coffeeShopJson = [
-  {
+const coffeeShopJson = {
     "shopName": "The Coffee Connection",
     "address": "123 Lakeside Way",
     "phone": "16503600708",
@@ -23,7 +22,6 @@ const coffeeShopJson = [
       }
     ]
   }
-]
 
 class Order {
   constructor(name) {
@@ -37,6 +35,14 @@ class Order {
 
   getItems() {
     return this._items;
+  }
+
+  add(item, quantity) {
+    for (var key in coffeeShopJson.prices[0]) {
+      if (item !== key) {
+        throw Error('Item not on the menu!')
+      } else return "Hello!"
+    }
   }
 }
 
