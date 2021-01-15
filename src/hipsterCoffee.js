@@ -38,12 +38,14 @@ class Order {
   }
 
   add(item, quantity) {
-    for (var key in coffeeShopJson.prices[0]) {
-      if (item !== key) {
-        throw Error('Item not on the menu!')
-      } else return "Hello!"
-    }
+    if (coffeeShopJson.prices[0][item] === undefined) {
+      throw Error('Item not on the menu!')
+    } else {
+      let price = coffeeShopJson.prices[0][item];
+      this._items.push([item, quantity, price])
+    } 
   }
 }
+
 
 module.exports = Order;
