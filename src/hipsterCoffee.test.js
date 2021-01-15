@@ -1,8 +1,11 @@
 const Order = require('./hipsterCoffee.js')
 
 describe('Order', () => {
+  let order = new Order('Susan');
   test('Has customer name property', () => {
-    let order = new Order('Susan');
     expect(order.getCustomerName()).toEqual('Susan')
+  });
+  test('Has customer items as property', () => {
+    expect(order.getItems()).toEqual([])
   });
 });

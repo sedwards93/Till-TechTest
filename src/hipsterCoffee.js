@@ -28,9 +28,15 @@ const coffeeShopJson = [
 class Order {
   constructor(name) {
     this._name = name;
+    this._items = [];
   }
+
   getCustomerName() {
     return this._name;
+  }
+
+  getItems() {
+    return this._items;
   }
 }
 
